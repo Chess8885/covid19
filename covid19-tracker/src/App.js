@@ -23,7 +23,7 @@ function App() {
           value="abc"
         >
       {
-        countries.map((country) => (
+        countries.map((countries) => (
           <MenuItem value={countries}>{countries}</MenuItem>
         ))
       }
