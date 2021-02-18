@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import {
   MenuItem,
   FormControl,
@@ -7,6 +7,9 @@ import {
 import './App.css';
 
 function App() {
+  const [countries, setCountries] = useState([
+    'USA', 'UK', 'INDIA'
+  ]);
   return (
     <div className="app">
       <div className="app__header">
@@ -19,11 +22,11 @@ function App() {
           variant="outlined"
           value="abc"
         >
-
-      <MenuItem value="worldwide">Worldwide</MenuItem>
-      <MenuItem value="worldwide">Option 2</MenuItem>
-      <MenuItem value="worldwide">Option 3</MenuItem>
-      <MenuItem value="worldwide">Option 4</MenuItem>
+      {
+        countries.map((country) => (
+          <MenuItem value={countries}>{countries}</MenuItem>
+        ))
+      }
       </Select> 
 
       </FormControl>
