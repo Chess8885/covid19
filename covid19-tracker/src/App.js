@@ -3,6 +3,8 @@ import {
   MenuItem,
   FormControl,
   Select,
+  Card,
+  CardContent
 } from "@material-ui/core";
 import './App.css';
 import InfoBox from './InfoBox';
@@ -30,11 +32,13 @@ function App() {
 
   const onCountryChange = async (event) => {
     const countryCode = event.target.value;
-    console.log('toto', countryCode);
     setCountry(countryCode);
+    const url = countryCode === "worldwide" ? 'https://disease.sh/v3/covid-19/all' : 
+    `https://disease.sh/v3/covid-19/countries/${countryCode}`;
   };
   return (
     <div className="app">
+      <div className="app__left">
       <div className="app__header">
       <h1>Covid19 Tracker</h1>
 
@@ -56,23 +60,20 @@ function App() {
         <InfoBox title="Coronavirus cases" cases={22} total={2000}/>
         <InfoBox title="Coronavirus recovered" cases={22} total={3000}/>
         <InfoBox title="Deaths" cases={22} total={4000}/>
-        {/* Infoboxs title="cases" */}
-        {/* Infoboxs title="recoveries" */}
-        {/* Infoboxs title="" */}
 
       </div>
 
-      {/* Header */}
-      {/* Title */}
 
-      {/* Info box */}
-      {/* Info box */}
-      {/* Info box */}
-
+      <Map/>
+      </div>
+      <Card className="app__right">
+        <CardContent>
+          <h3>Live Cases by Country</h3>
+          <h3>Worldwide new cases</h3>
+        </CardContent>
       {/* Table */}
       {/* Graph */}
-      <Map/>
-      {/* Map */}
+      </Card>
     </div>
   );
 }
