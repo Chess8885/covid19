@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, {useEffect, useState} from "react";
 import {
   MenuItem,
@@ -62,3 +63,55 @@ function App() {
 }
 
 export default App;
+=======
+import React, {useState} from "react";
+import {
+  MenuItem,
+  FormControl,
+  Select,
+} from "@material-ui/core";
+import './App.css';
+
+function App() {
+  const [countries, setCountries] = useState([
+    'USA', 'UK', 'INDIA'
+  ]);
+  return (
+    <div className="app">
+      <div className="app__header">
+      <h1>Covid19 Tracker</h1>
+
+
+      
+      <FormControl className="app__dropdown">
+        <Select
+          variant="outlined"
+          value="abc"
+        >
+      {
+        countries.map((countries) => (
+          <MenuItem value={countries}>{countries}</MenuItem>
+        ))
+      }
+      </Select> 
+
+      </FormControl>
+      </div>
+
+      {/* Header */}
+      {/* Title */}
+
+      {/* Info box */}
+      {/* Info box */}
+      {/* Info box */}
+
+      {/* Table */}
+      {/* Graph */}
+
+      {/* Map */}
+    </div>
+  );
+}
+
+export default App;
+>>>>>>> c56d8ce7215d91ec5971d5daccb14ccc83caa5b8
